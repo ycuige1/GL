@@ -24,7 +24,7 @@ int main(void)
      S3=S3+r; 
      i=i+1; 
    } 
-   while(a<21)
+   while(p<21)
    { 
      if(a%3==0||b%7==0) 
       {
