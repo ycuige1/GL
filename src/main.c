@@ -43,7 +43,7 @@ int main(void)
     }
 
 
-    for(p=0;p<4;p++)
+    for(p=0;p<5;p++)
     {
         b[p]=a[4-p];
     }
