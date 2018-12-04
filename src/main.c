@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	char nom[100],prenom[100],chaine[100]="Je m'appelle Yuqing Cui et j'ai 19 ans.";
+	char nom[100],prenom[100],chaine[100];
 	unsigned long int annee,age;
     int a;
     
@@ -22,6 +22,7 @@ int main(void)
 
     age=2018-annee;
 
+    sprintf(chaine,"Je m'appelle %s %s et j'ai %lu ans.",prenom,nom,age)
     printf("%s\n",chaine);
 	
     a=MessagePopup("votre profil",chaine);
