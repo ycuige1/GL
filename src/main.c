@@ -1,25 +1,30 @@
 //  Copyright (c) 2018 Antoine Tran Tan
 //
 
-#include <ansi_c.h>
+#include <userint.h>
+#include <stdio.h>
 #include "my_header.h"
 
 int main(void)
 {
-	char nom[100],prenom[100];
-	unsigned long int annee;
-	printf("veuiller taper votre nom,SVP\n");
+	char nom[100],prenom[100],chaine[100]="Je m'appelle Yuqing Cui et j'ai 19 ans.";
+	unsigned long int annee,age;
+    int a;
+    
+	printf("veuillez taper votre nom,SVP\n");
 	scanf("%s",nom);
 	
-	printf("veuiller taper votre prenom,SVP\n");  
+	printf("veuillez taper votre prenom,SVP\n");  
 	scanf("%s",prenom); 
 	
-	printf("veuiller taper votre annee de naissance,SVP\n");  
+	printf("veuillez taper votre annee de naissance,SVP\n");  
 	scanf("%lu",&annee);
-	printf("Je m'appelle %s %s,et j'ai 19ans.\n",nom,prenom);
+
+    age=2018-annee;
+
+    printf("%s\n",chaine);
 	
-	printf("merci\n");   
-	
-	
+    a=MessagePopup("votre profil",chaine);
+ 
     return 0;
 }
