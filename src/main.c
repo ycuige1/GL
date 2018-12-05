@@ -5,21 +5,29 @@
 
 int main(void)
 {
-    char nom_fig[80];
-    int nb_pts;
-    int x[10],y[10];
-    char ligne1T[80]= "Nom: triangle_A";
-	char ligne2T[80]= "Nb points: 3";
-	char ligne3T[80]= "Cordonnees: 10 20 30 20 30 40 -1 -1 -1 -1";
-	char ligne1P[80]= "Nom: Pentagone_B";
-	char ligne2P[80]= "Nb points: 5";
-	char ligne3P[80]= "Cordonnees: 10 20 30 20 30 40 43 53 35 65";
+	char ligne1[80]= "Nom: Pentagone_B";
+	char ligne2[80]= "Nb points: 5";
+	char ligne3[80]= "Cordonnees: 10 20 30 20 30 40 43 53 35 65";
 
-    sscanf(ligne1T,"%*s %s",nom_fig[0]);
-	sscanf(ligne2T,"%*s %*s %d",&nb_ptsA);
-	sscanf(ligne3T,"%*s %d %d %d %d %d %d %d %d %d %d",&x1[0],&y1[0],&x1[1],&y1[1],&x1[2],&y1[2],&x1[3],&y1[3],&x1[4],&y1[4]);
-    sscanf(ligne1P,"%*s %s" , nom_fig[1]);
-	sscanf(ligne2P,"%*s %*s %d" ,&nb_ptsB);
-	sscanf(ligne3P,"%*s %d %d %d %d %d %d %d %d %d %d",&x2[0],&y2[0],&x2[1],&y2[1],&x2[2],&y2[2],&x2[3],&y2[3],&x2[4],&y2[4]);
+    char nom_fig[80];
+    int nb_pts,i;
+    long int x[10],y[10];
+
+    char message[80];
+
+    sscanf(ligne1,"%*s %s" ,nom_fig);
+	sscanf(ligne2,"%*s %*s %d" ,&nb_pts);
+	sscanf(ligne3,"%*s %d %d %d %d %d %d %d %d %d %d",&x[0],&y[0],&x[1],&y[1],&x[2],&y[2],&x[3],&y[3],&x[4],&y[4]);
+
+    if(ligne1[5]==0||ligne2[11]==0||ligne3[41]==0)
+        {
+             MessagePopup("Erreur","Il manque au moins d'une donnee.");
+        }
+     else
+     {
+        sprintf(message,"La figure %s possede %d sommets",nom_fig,nb_pts);
+        MessagePopup("information de la figure",message);
+     }
+
     return 0;
 }
